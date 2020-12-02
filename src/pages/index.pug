@@ -1,0 +1,21 @@
+block settings
+	- 
+		var stats = [
+			{title: 'Промоутеры', votes_percent: '32.0', votes_amount: 81, base:30, progress: '+1.2', type: 'promotion'},
+			{title: 'Скептики', votes_percent: '39.1', votes_amount: 8, base:30, progress: '+4.8', type: 'skeptic'},
+			{title: 'Критики', votes_percent: '79.8', votes_amount: 7, base:30, progress: '-9.7', type: 'critic'}
+		]
+
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Happy Job Donut Chart
+	body
+		.page
+			.block.block_type_chart
+				.chart
+					include ../components/chart
+					include ../components/statistics
+					.chart__line

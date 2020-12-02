@@ -1,0 +1,93 @@
+.statistics {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	list-style: none;
+	padding: 0;
+	color:var(--c-gray1);
+	&__item {
+		display: grid;
+		grid-template-columns: auto 20% 35%;
+		gap:10px;
+		margin-bottom: 20px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__title {
+		font-weight: bold;
+	}
+	&__data {
+		text-align: right;
+	}
+	&__data-percent {
+		font-weight: bold;
+		display: block;
+		margin-bottom: 5px;
+	}
+	&__data-amount {
+		display: block;
+		color: var(--c-gray3);
+		&::after {
+			content: '';
+			background: url(../images/human_full.svg) no-repeat 0 0;
+			width: 12px;
+			height: 12px;
+			display: inline-block;
+			margin-left: 5px;
+		}
+	}
+	&__progress {
+		height: 33px;
+		width: 100%;
+		background: var(--c-gray6);
+		border:1px solid var(--c-gray4);
+		box-sizing: border-box;
+		border-radius: 5px;
+		position: relative;
+		&-value {
+			position: absolute;
+			top:0;
+			right:10px;
+			z-index: 5;
+			color:var(--c-gray3);
+			font-size: 14px;
+			line-height: 33px;
+		}
+		&-old, &-new {
+			content: '';
+			position: absolute;
+			left:0;
+			z-index: 2;
+		}
+		&-new {
+			top:0;
+			height: 26px;
+			border-radius: 5px 0 0 0;
+		}
+		&-old {
+			top:26px;
+			height: 7px;
+			border-radius: 0 0 0 5px;
+			opacity: .5;
+		}
+		
+		&.promotion {
+			.statistics__progress-new,
+			.statistics__progress-old {
+				background-color: var(--c-green);
+			}
+		}
+		&.skeptic {
+			.statistics__progress-new,
+			.statistics__progress-old {
+				background-color: var(--c-yellow);
+			}
+		}
+		&.critic {
+			.statistics__progress-new,
+			.statistics__progress-old {
+				background-color: var(--c-red);
+			}
+		}
+	}
+}

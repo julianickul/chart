@@ -1,0 +1,17 @@
+block statistics
+
+ul.chart__statistics.statistics
+	- for (var i = 0; i < stats.length; i++) {
+		- var cls = "statistics__progress " + stats[i].type
+		- var progress = stats[i].base + parseFloat(stats[i].progress);
+		li.statistics__item
+			.statistics__title #{stats[i].title}
+			.statistics__data 
+				span.statistics__data-percent #{stats[i].votes_percent} 
+				span.statistics__data-amount #{stats[i].votes_amount}
+			div(class=cls)
+				span.statistics__progress-old(style="width:" +stats[i].base + "%")
+				span.statistics__progress-new(style="width:" +progress + "%")
+				span.statistics__progress-value #{stats[i].progress}
+	- }
+			
