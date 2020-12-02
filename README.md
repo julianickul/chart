@@ -1,5 +1,8 @@
 # happy job test task
 
+## Ссылка на проект github pages
+https://julianickul.github.io/chart/index.html
+
 ## Задание
 Необходимо сверстать блок по макету: http://files.happy-inc.ru/drive/s/qSqltH5ScHLXnfQVAk1rTFEnGs3566 Шрифты в макете - Arial, Gotham Pro. Дополнительное задание 
 
